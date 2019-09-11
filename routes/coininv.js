@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const router = express.Router();
 
 //Load CoinModel model
-require("../models/coininv");
+require("../models/coinInv");
 const CoinModel = mongoose.model("CoinModel");
 
 //CoinInv Home
