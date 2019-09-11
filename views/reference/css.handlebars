@@ -1,0 +1,103 @@
+<div style="height:60px;"></div>
+<h1 class="text-center p-3">Web Reference Page</h1>
+<h2 class="text-center p-2">CSS Examples</h2>
+
+<!-- ACCORDION -->
+<div id="accordion">
+  <div class="card">
+    <div class="card-header">
+      <h5>
+        <a href="#collapse1" data-parent="#accordion" data-toggle="collapse">
+          CSS display: block elements by default. Button toggles them to block and inline
+        </a>
+      </h5>
+    </div>
+    <!-- ACCORDION Section-->
+    <div id="collapse1" class="collapse">
+      <div class="card-body">
+        <!-- Put section in here -->
+        {{> _display_block}}
+        <!-- End Section-->
+      </div>
+    </div>
+  </div>
+  <!-- End ACCORDION Section-->
+  <div class="card">
+    <div class="card-header">
+      <h5>
+        <a href="#collapse2" data-parent="#accordion" data-toggle="collapse">
+          CSS display: inline elements by default. Button toggles them to block and inline
+        </a>
+      </h5>
+    </div>
+    <!-- ACCORDION Section-->
+    <div id="collapse2" class="collapse">
+      <div class="card-body">
+        <!-- Put section in here -->
+        {{> _display_inline}}
+        <!-- End Section-->
+      </div>
+    </div>
+  </div>
+  <!-- End ACCORDION Section-->
+
+  <div class="card">
+    <div class="card-header">
+      <h5>
+        <a href="#collapse3" data-parent="#accordion" data-toggle="collapse">
+          CSS display: inline, block, inline-block
+        </a>
+      </h5>
+    </div>
+    <!-- ACCORDION Section-->
+    <div id="collapse3" class="collapse">
+      <div class="card-body">
+        <!-- Put section in here -->
+        {{> _display_inline_block}}
+        <!-- End Section-->
+      </div>
+    </div>
+  </div>
+  <!-- End ACCORDION Section-->
+
+  <div class="card">
+    <div class="card-header">
+      <h5>
+        <a href="#collapse4" data-parent="#accordion" data-toggle="collapse">
+          Float and Clear
+        </a>
+      </h5>
+    </div>
+    <!-- ACCORDION Section-->
+    <div id="collapse4" class="collapse">
+      <div class="card-body">
+        <!-- Put section in here -->
+        {{> _float}}
+        <!-- End Section-->
+      </div>
+    </div>
+  </div>
+  <!-- End ACCORDION Section-->
+
+  <div class="card">
+    <div class="card-header">
+      <h5>
+        <a href="#collapse5" data-parent="#accordion" data-toggle="collapse">
+          Position
+        </a>
+      </h5>
+    </div>
+    <!-- ACCORDION Section-->
+    <div id="collapse5" class="collapse">
+      <div class="card-body">
+        <!-- Put section in here -->
+        {{> _position}}
+        <!-- End Section-->
+      </div>
+    </div>
+  </div>
+  <!-- End ACCORDION Section-->
+
+
+  {{!-- End Accordian --}}
+</div>

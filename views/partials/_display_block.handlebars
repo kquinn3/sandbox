@@ -1,0 +1,62 @@
+<div id="broke" class="mt-2">
+  <h1 class="mb-5">The JS, below, is broke, it calls innerText. Watch what happens to nested elements</h1>
+  <h4 class="mb-5">Hit the button to toggle the display, between block and inline, of the element with the same color
+  </h4>
+  <div class='div-1a' style="background: tan; height:300px">Everything is inside this tan div
+    <p class='p-1' style="background: yellow;">(p)paragraph by default is a block element</p>
+    <h1 class='h1-1' style="background: orange;">h1-h6 by default are block elements</h1>
+    <ul class='ul-1' style="background: green">Un-Ordered List by default is a block element
+      <li class='li-1a' style="background: blue">List Item by default is a block element</li>
+      <li class='li-1b' style="background: red">List Item by default is a block element</li>
+      <li class='li-1c' style="background:yellow">List Item by default is a block element</li>
+    </ul>
+    <div class="div-1b" style="background: pink">A div is a block element</div>
+    <label>Labels are inline elements</label>
+  </div>
+  <p class=" text-center m-3">Use buttons below to toggle the element's display between block and inline</p>
+  <div class="container">
+    <button class="btnp-1" style="background: yellow;">Make yellow p inline</button>
+    <button class="btnh1-1" style="background: orange;">Make orange h1 inline</button>
+    <button class="btnul-1" style="background: green;">Make green ul inline</button>
+    <button class="btnli-1a" style="background:blue">Make blue li inline</button>
+    <button class="btnli-1b" style="background: red;">Make red li inline</button>
+    <button class="btnli-1c" style="background: yellow;">Make yellow li inline</button>
+    <button class="btndiv-1b" style="background:pink;">Make pink div inline</button>
+  </div>
+  <br><br>
+</div>
+<div id="fixed">
+  <h1 class="mb-5">Th JS, below, is fixed, it calls childNodes[0].textContent. Watch what happens to nested elements
+  </h1>
+  <div class='div-1a' style="background: tan; height:300px">Everything is inside this tan div
+    <p class='p-1' style="background: yellow;">(p)paragraph by default is a block element</p>
+    <h1 class='h1-1' style="background: orange;">h1-h6 by default are block elements</h1>
+    <ul class='ul-1' style="background: green">Un-Ordered List by default is a block element
+      <li class='li-1a' style="background: blue">List Item by default is a block element</li>
+      <li class='li-1b' style="background: red">List Item by default is a block element</li>
+      <li class='li-1c' style="background:yellow">List Item by default is a block element</li>
+    </ul>
+    <div class="div-1b" style="background: pink">A div is a block element</div>
+    <label>Labels are inline elements</label>
+  </div>
+  <p class=" text-center m-3">Use buttons below to toggle the element's display between block and inline</p>
+  <div class="container">
+    <button class="btnp-1" style="background: yellow;">Make yellow p inline</button>
+    <button class="btnh1-1" style="background: orange;">Make orange h1 inline</button>
+    <button class="btnul-1" style="background: green;">Make green ul inline</button>
+    <button class="btnli-1a" style="background:blue">Make blue li inline</button>
+    <button class="btnli-1b" style="background: red;">Make red li inline</button>
+    <button class="btnli-1c" style="background: yellow;">Make yellow li inline</button>
+    <button class="btndiv-1b" style="background:pink;">Make pink div inline</button>
+  </div>
+  <br><br>
+</div>
+
+<h1>JavaScript and CSS Notes:</h1>
+<p>1. innerText caused the above problem, for the ul, which had children. innerText sets everything, including
+  children, that is between the opening and closing tag. Instead, you can use childNodes, which is an array and then
+  select textContent of the correct childNode.</p>
+<p>2. document.QuerySelector returns the first element it finds.</p>
+<p>3. document.QuerySelectorAll returns a NodeList. This is not an array. This is a collection of nodes.</p>
+<p>4. Use Array.from() to turn it into an array. This way it can be iterated by using forEach()</p>
+<p>5. The dots before each li, is actually contained in the ul.

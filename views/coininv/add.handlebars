@@ -1,0 +1,36 @@
+<div style="height:100px;"></div>
+{{#each error}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+{{/each}}
+<div class="add-container">
+  <div class="card card-body">
+    <h3>Add Coin</h3>
+    <form action="./inventory" method="post">
+      <div class="form-group">
+        <label for="denomination">Denomination</label>
+        <select class="form-control" name="denomination">
+          <option value="penny">Penny</option>
+          <option value="nickle">Nickle</option>
+          <option value="dime">Dime</option>
+          <option value="quarter">Quarter</option>
+          <option value="halfdollar">Half Dollar</option>
+          <option value="dollar">Dollar</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="mint">US Mint</label>
+        <select class="form-control" name="mint">
+          <option value="denver">Denver</option>
+          <option value="philadelphia">Philadelphia</option>
+          <option value="sanfrancisco">San Francisco</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="year">Mint Year</label>
+        <input type="number" min="1776" max="2019" class="form-control" name="year">
+      </div>
+      <button type="submit" class="btn btn-success">Add Coin</button>
+    </form>
+  </div>
+</div>

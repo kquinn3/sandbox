@@ -1,0 +1,102 @@
+<div style="height:60px;"></div>
+<div class="container p-5" style="text-align:center">
+  <h1 class="display-3" style="display: inline-block; background: #C0C0C0; padding: 0 1.25rem">Coin Inventory</h1>
+</div>
+<div class="row">
+  {{!-- Start here for coin type --}}
+  <div class="col-2 text-center">
+    <img style="height:200px" class="img-fluid mb-3 d-inline-block" src="../img/dollar.jpg" alt="US Dollar">
+    {{#each dollar}}
+    <div class="card card-body mb-2">
+      <p>{{denomination}} {{mint}} {{year}}</p>
+      <a class="btn btn-dark btn-block mb-1" href="/coininv/edit/{{id}}">Edit Coin</a>
+      <form method="post" action="/coininv/inventory/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Delete">
+      </form>
+    </div>
+    {{/each}}
+  </div>
+  {{!-- Finish here for coin type --}}
+
+  {{!-- Start here for coin type --}}
+  <div class="col-2 text-center">
+    <img style="height:200px" class="img-fluid mb-3 d-inline-block" src="../img/halfdollar.jpg" alt="US Half Dollar">
+    {{#each halfdollar}}
+    <div class="card card-body mb-2">
+      <p>{{denomination}} {{mint}} {{year}}</p>
+      <a class="btn btn-dark btn-block mb-1" href="/coininv/edit/{{id}}">Edit Coin</a>
+      <form method="post" action="/coininv/inventory/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Delete">
+      </form>
+    </div>
+    {{/each}}
+  </div>
+  {{!-- Finish here for coin type --}}
+
+  {{!-- Start here for coin type --}}
+  <div class="col-2 text-center">
+    <img style="height:200px" class="img-fluid mb-3 d-inline-block" src="../img/quarter.jpg" alt="US Quarter">
+    {{#each quarter}}
+    <div class="card card-body mb-2">
+      <p>{{denomination}} {{mint}} {{year}}</p>
+      <a class="btn btn-dark btn-block mb-1" href="/coininv/edit/{{id}}">Edit Coin</a>
+      <form method="post" action="/coininv/inventory/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Delete">
+      </form>
+    </div>
+    {{/each}}
+  </div>
+  {{!-- Finish here for coin type --}}
+
+  {{!-- Start here for coin type --}}
+  <div class="col-2 text-center">
+    <img style="height:200px" class="img-fluid mb-3 d-inline-block" src="../img/dime.jpg" alt="US Dime">
+    {{#each dime}}
+    <div class="card card-body mb-2">
+      <p>{{denomination}} {{mint}} {{year}}</p>
+      <a class="btn btn-dark btn-block mb-1" href="/coininv/edit/{{id}}">Edit Coin</a>
+      <form method="post" action="/coininv/inventory/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Delete">
+      </form>
+    </div>
+    {{/each}}
+  </div>
+  {{!-- Finish here for coin type --}}
+
+  {{!-- Start here for coin type --}}
+  <div class="col-2 text-center">
+    <img style="height:200px" class="img-fluid mb-3 d-inline-block" src="../img/nickle.jpg" alt="US Nickle">
+    {{#each nickle}}
+    <div class="card card-body mb-2">
+      <p>{{denomination}} {{mint}} {{year}}</p>
+      <a class="btn btn-dark btn-block mb-1" href="/coininv/edit/{{id}}">Edit Coin</a>
+      <form method="post" action="/coininv/inventory/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Delete">
+      </form>
+    </div>
+    {{/each}}
+  </div>
+  {{!-- Finish here for coin type --}}
+
+  {{!-- Start here for coin type --}}
+  <div class="col-2 text-center">
+    <img style="height:200px" class="img-fluid mb-3 d-inline-block" src="../img/penny.jpg" alt="US Penny">
+    {{#each penny}}
+    <div class="card card-body mb-2">
+      <p>{{denomination}} {{mint}} {{year}}</p>
+      <a class="btn btn-dark btn-block mb-1" href="/coininv/edit/{{id}}">Edit Coin</a>
+      <form method="post" action="/coininv/inventory/{{id}}?_method=DELETE">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" class="btn btn-danger btn-block" value="Delete">
+      </form>
+    </div>
+    {{/each}}
+  </div>
+  {{!-- Finish here for coin type --}}
+
+</div>

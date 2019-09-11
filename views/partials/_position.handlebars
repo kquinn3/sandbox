@@ -1,0 +1,50 @@
+<h1 class="mb-5">CSS Position Property</h1>
+<h5>5 types: static(default), relative, fixed, absolute and sticky</h5>
+<ul class="mb-2">
+  <li class="mb-1"><b>static</b>: The element is placed in the next available position
+  <li class="mb-1"><b>relative</b>: uses top,right, bottom, left to place element relative to its default position
+  </li>
+  <li class="mb-1"><b>fixed</b>: uses top,right, bottom, left and the element is fixed to the position</li>
+  <li class="mb-1"><b>absolute</b>: uses top,right, bottom, left to place element relative to the viewport</li>
+  <li class="mb-1"><b>sticky</b>: uses top,right, bottom, left and the element will stick to the position once it's
+    scrolled
+    there
+  </li>
+</ul>
+
+<div class="container" style:"margin:auto">
+  <div style="height:300px;background:#f4f4f4">
+    <div id="pos-1" style="height:50px; width:100px; background:yellow">Yellow</div>
+    <div id="pos-2" style="height:50px; width:100px; background:red">Red</div>
+    <div id="pos-3" style="height:50px; width:100px; background:blue">Blue</div>
+    <div id="pos-4" style="height:50px; width:100px; background:orange">Orange</div>
+    <div id="pos-5" style="height:50px; width:100px; background:pink">Pink</div>
+  </div>
+</div>
+<br><br>
+<label for="drop">Select color</label>
+<select name="drop" id="divNum">
+  <option value="yellow">Yellow</option>
+  <option value="red">Red</option>
+  <option value="blue">Blue</option>
+  <option value="orange">Orange</option>
+  <option value="pink">Pink</option>
+</select>
+<label class="ml-4" for="drop2">Select position property</label>
+<select name="drop2" id="posType">
+  <option value="static">static</option>
+  <option value="relative">relative</option>
+  <option value="fixed">fixed</option>
+  <option value="absolute">absolute</option>
+  <option value="sticky">sticky</option>
+</select>
+<input class="ml-5" type="radio" id="topRadio" name="topbottom" value="top" checked> Top
+<input type="radio" name="topbottom" id="bottomRadio" value="bottom"> Bottom
+<label class="ml-2" id="topbot-1" for="topbot-1">0px</label>
+<input id="topbot" name="topbot-1" type="range" min="0" max="1000" value="0">
+<input class="ml-5" type="radio" id="rightRadio" name="rightleft" value="right" checked> Right
+<input type="radio" name="rightleft" id="leftRadio" value="left"> Left
+<label class="ml-2" id="rightleft-1" for="rightleft-1">0px</label>
+<input id="rightleft" name="rightleft-1" type="range" min="0" max="1000" value="0">
+<button id="apply-1" class="btn btn-info btn-block m-3">Apply Changes</button>
+<button id="reset-1" class="btn btn-warning btn-block m-3">Reset to Initial position</button>
