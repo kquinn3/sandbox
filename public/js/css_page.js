@@ -370,3 +370,233 @@ reset1.addEventListener("click", e => {
   colorVal = "yellow";
   positionVal = "static";
 });
+
+///////////////////////////////////
+//
+// Flex Section
+//
+///////////////////////////////////
+let flexItemsArray = [];
+let flexAlignArray = [];
+
+const flexContainer1 = document.querySelector("#flex-container1");
+const flexContainer2 = document.querySelector("#flex-container2");
+const flexContainer3 = document.querySelector("#flex-container3");
+const flexContainer4 = document.querySelector("#flex-container4");
+const flexContainer5 = document.querySelector("#flex-container5");
+const flexContainer = document.querySelector("#flex-container");
+const flexAlign = document.querySelector("#align-self-buttons");
+const flexItems = document.querySelectorAll(".flex-item");
+const flexItem1 = document.querySelector(".flex-item-1");
+const flexItem2 = document.querySelector(".flex-item-2");
+const flexItem3 = document.querySelector(".flex-item-3");
+const flexItem4 = document.querySelector(".flex-item-4");
+const flexItem5 = document.querySelector(".flex-item-5");
+const flexItem6 = document.querySelector(".flex-item-6");
+const flexAddBtn = document.querySelector(".flex-addBtn");
+const flexRemoveBtn = document.querySelector(".flex-removeBtn");
+const flexContainerBtn = document.querySelector(".flex-contBtn");
+const flexContainerBtn2 = document.querySelector(".flex-contBtn2");
+const flexContainerBtn3 = document.querySelector(".flex-contBtn3");
+const flexContainerBtn4 = document.querySelector(".flex-contBtn4");
+const flexItemBtn = document.querySelector(".flex-itemBtn");
+const flexItem1Btn = document.querySelector(".flex-item-1Btn");
+const flexItem2Btn = document.querySelector(".flex-item-2Btn");
+const flexItem3Btn = document.querySelector(".flex-item-3Btn");
+const flexItem4Btn = document.querySelector(".flex-item-4Btn");
+const flexItem5Btn = document.querySelector(".flex-item-5Btn");
+const flexItem6Btn = document.querySelector(".flex-item-6Btn");
+
+flexAlign.addEventListener("click", e => {
+  let num = e.target.id.substr(15);
+  let nameClass = `flex-item-${num}`;
+  let elm = document.querySelector(`.flex-item-${num}`);
+  let txt = document.querySelector(`#as-${num}`);
+  if (txt.textContent === "align-self:auto") {
+    elm.classList.remove("alignSelfAuto");
+    elm.classList.add("alignSelfFlexStart");
+    txt.textContent = "align-self:flex-start";
+  } else if (txt.textContent === "align-self:flex-start") {
+    elm.classList.remove("alignSelfFlexStart");
+    elm.classList.add("alignSelfFlexEnd");
+    txt.textContent = "align-self:flex-end";
+  } else if (txt.textContent === "align-self:flex-end") {
+    elm.classList.remove("alignSelfFlexEnd");
+    elm.classList.add("alignSelfCenter");
+    txt.textContent = "align-self:center";
+  } else if (txt.textContent === "align-self:center") {
+    elm.classList.remove("alignSelfCenter");
+    elm.classList.add("alignSelfStretch");
+    txt.textContent = "align-self:stretch";
+  } else if (txt.textContent === "align-self:stretch") {
+    elm.classList.remove("alignSelfStretch");
+    elm.classList.add("alignSelfBaseline");
+    txt.textContent = "align-self:baseline";
+  } else if (txt.textContent === "align-self:baseline") {
+    elm.classList.remove("alignSelfBaseline");
+    elm.classList.add("alignSelfAuto");
+    txt.textContent = "align-self:auto";
+  }
+});
+
+flexAddBtn.addEventListener("click", e => {
+  let num = flexItemsArray.length + 1;
+  let node = document.createElement("div");
+  let nodeChild = document.createElement("p");
+  let nodeChild2 = document.createElement("p");
+  nodeChild2.id = `as-${num}`;
+  let btnNode1 = document.createElement("button");
+
+  //node.classList = `flex-item alignSelfAuto`;
+  let flexClass = `flex-item-${num}`;
+  node.classList = `alignSelfAuto flex-item ${flexClass}`;
+  //node.classList = `flex-item flex-item-${num}`;
+
+  btnNode1.id = `btn-align-self-${num}`;
+  nodeChild.appendChild(document.createTextNode(`Flex Item ${num}`));
+  nodeChild2.appendChild(document.createTextNode("align-self:auto"));
+  node.appendChild(nodeChild);
+  node.appendChild(nodeChild2);
+
+  btnNode1.appendChild(document.createTextNode(`align-self-item ${num}`));
+  btnNode1.style.background = "lightgray";
+  flexContainer.appendChild(node);
+  flexAlign.appendChild(btnNode1);
+  flexItemsArray.push(node);
+  flexAlignArray.push(btnNode1);
+});
+flexRemoveBtn.addEventListener("click", e => {
+  let node = flexItemsArray.pop();
+  let node1 = flexAlignArray.pop();
+  flexContainer.removeChild(node);
+  flexAlign.removeChild(node1);
+});
+
+flexContainerBtn.addEventListener("click", e => {
+  if (flexContainer.style.display === "flex") {
+    flexContainer.style.display = "block";
+    flexContainerBtn.textContent = "Make Container display:flex";
+    flexContainer1.textContent = "The container style is now display:block";
+  } else {
+    flexContainer.style.display = "flex";
+    flexContainerBtn.textContent = "Make Container display:block";
+    flexContainer1.textContent = "The container style is now display:flex";
+  }
+});
+
+flexContainerBtn4.addEventListener("click", e => {
+  if (
+    flexContainer.style.justifyContent === "" ||
+    flexContainer.style.justifyContent === "flex-start"
+  ) {
+    flexContainer.style.justifyContent = "flex-end";
+    flexContainer5.textContent =
+      "The container now has a style justify-content: flex-end";
+    flexContainerBtn4.textContent = "Make justify-content:center";
+  } else if (flexContainer.style.justifyContent === "flex-end") {
+    flexContainer.style.justifyContent = "center";
+    flexContainer5.textContent =
+      "The container now has a style justify-content: center";
+    flexContainerBtn4.textContent = "Make justify-content:space-between";
+  } else if (flexContainer.style.justifyContent === "center") {
+    flexContainer.style.justifyContent = "space-between";
+    flexContainer5.textContent =
+      "The container now has a style justify-content: space-between";
+    flexContainerBtn4.textContent = "Make justify-content:space-around";
+  } else if (flexContainer.style.justifyContent === "space-between") {
+    flexContainer.style.justifyContent = "space-around";
+    flexContainer5.textContent =
+      "The container now has a style justify-content: space-around";
+    flexContainerBtn4.textContent = "Make justify-content:space-evenly";
+  } else if (flexContainer.style.justifyContent === "space-around") {
+    flexContainer.style.justifyContent = "space-evenly";
+    flexContainer5.textContent =
+      "The container now has a style justify-content: space-evenly";
+    flexContainerBtn4.textContent = "Make justify-content:flex-start";
+  } else if (flexContainer.style.justifyContent === "space-evenly") {
+    flexContainer.style.justifyContent = "flex-start";
+    flexContainer5.textContent =
+      "The container now has a style justify-content: flex-start";
+    flexContainerBtn4.textContent = "Make justify-content:flex-end";
+  }
+});
+
+flexContainerBtn3.addEventListener("click", e => {
+  if (
+    flexContainer.style.alignContent === "" ||
+    flexContainer.style.alignContent === "stretch"
+  ) {
+    flexContainer.style.alignContent = "flex-start";
+    flexContainer4.textContent =
+      "The container now has a style align-content: flex-start";
+    flexContainerBtn3.textContent = "Make align-content:flex-end";
+  } else if (flexContainer.style.alignContent === "flex-start") {
+    flexContainer.style.alignContent = "flex-end";
+    flexContainer4.textContent =
+      "The container now has a style align-content: flex-end";
+    flexContainerBtn3.textContent = "Make align-content:center";
+  } else if (flexContainer.style.alignContent === "flex-end") {
+    flexContainer.style.alignContent = "center";
+    flexContainer4.textContent =
+      "The container now has a style align-content: center";
+    flexContainerBtn3.textContent = "Make align-content:baseline";
+  } else if (flexContainer.style.alignContent === "center") {
+    flexContainer.style.alignContent = "baseline";
+    flexContainer4.textContent =
+      "The container now has a style align-content: baseline";
+    flexContainerBtn3.textContent = "Make align-content:stretch";
+  } else if (flexContainer.style.alignContent === "baseline") {
+    flexContainer.style.alignContent = "stretch";
+    flexContainer4.textContent =
+      "The container now has a style align-content: stretch";
+    flexContainerBtn3.textContent = "Make align-content:flex-start";
+  }
+});
+
+flexContainerBtn2.addEventListener("click", e => {
+  if (
+    flexContainer.style.alignItems === "" ||
+    flexContainer.style.alignItems === "stretch"
+  ) {
+    flexContainer.style.alignItems = "flex-start";
+    flexContainer3.textContent =
+      "The container now has a style align-items: flex-start";
+    flexContainerBtn2.textContent = "Make align-items flex-end";
+  } else if (flexContainer.style.alignItems === "flex-start") {
+    flexContainer.style.alignItems = "flex-end";
+    flexContainer3.textContent =
+      "The container now has a style align-items: flex-end";
+    flexContainerBtn2.textContent = "Make align-items center";
+  } else if (flexContainer.style.alignItems === "flex-end") {
+    flexContainer.style.alignItems = "center";
+    flexContainer3.textContent =
+      "The container now has a style align-items: center";
+    flexContainerBtn2.textContent = "Make align-items baseline";
+  } else if (flexContainer.style.alignItems === "center") {
+    flexContainer3.textContent =
+      "The container now has a style align-items: baseline";
+    flexContainer.style.alignItems = "baseline";
+    flexContainerBtn2.textContent = "Make align-items stretch";
+  } else if (flexContainer.style.alignItems === "baseline") {
+    flexContainer.style.alignItems = "stretch";
+    flexContainer3.textContent =
+      "The container now has a style align-items: stretch";
+    flexContainerBtn2.textContent = "Make align-items flex-start";
+  }
+});
+
+flexItemBtn.addEventListener("click", e => {
+  flexItemsArray.forEach(item => {
+    if (item.style.flex === "0 1 auto") {
+      item.style.flex = "1 1 auto";
+      flexItemBtn.textContent = "Remove flex 1";
+      flexContainer2.textContent =
+        "The container now has a style flex: 1 1 auto";
+    } else {
+      flexContainer2.textContent =
+        "The container now has a style flex: 0 1 auto";
+      item.style.flex = "0 1 auto";
+      flexItemBtn.textContent = "Make flex: 1";
+    }
+  });
+});
