@@ -4,6 +4,7 @@
   "description": "A website to store website templates",
   "main": "app.js",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "start": "node app.js"
   },
   "author": "Kevin Quinn",
@@ -16,5 +17,11 @@
     "express-session": "^1.16.2",
     "method-override": "^3.0.0",
     "mongoose": "^5.7.0"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.5"
+  },
+  "resolutions": {
+    "minimist": "^1.2.5"
   }
 }
